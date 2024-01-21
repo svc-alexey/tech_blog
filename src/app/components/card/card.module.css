@@ -20,6 +20,7 @@
 
 .img {
     object-fit: cover;
+    border-radius: 10px;
 }
 
 .date {
@@ -41,4 +42,10 @@
     border-bottom: 1px solid crimson;
     width: max-content;
     padding: 2px 0;
+}
+
+@media screen and (max-width:1024px) {
+    .imageContainer{
+        display: none;
+    }
 }
