@@ -8,7 +8,8 @@ const AuthLinks = props => {
 
   const [open, setOpen] = useState(false);
 
-  const status = "notauth";
+  const status = "auth";
+  // const status = "notauth";
 
   return (<>
     {status === "notauth" ? (
