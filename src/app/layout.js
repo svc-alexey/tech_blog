@@ -4,6 +4,7 @@ import Navbar from './components/navbar/Navbar'
 import './globals.css'
 import { Inter } from 'next/font/google'
 import ThemePrivider from '@/providers/ThemePrivider'
+import AuthProvider from '@/providers/AuthProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,17 +17,19 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ThemeContextProvider>
-          <ThemePrivider>
-            <div className="container">
-              <div className='wrapper'>
-                <Navbar />
-                {children}
-                <Footer />
+        <AuthProvider>
+          <ThemeContextProvider>
+            <ThemePrivider>
+              <div className="container">
+                <div className='wrapper'>
+                  <Navbar />
+                  {children}
+                  <Footer />
+                </div>
               </div>
-            </div>
-          </ThemePrivider>
-        </ThemeContextProvider>
+            </ThemePrivider>
+          </ThemeContextProvider>
+        </AuthProvider>
       </body>
     </html>
   )
