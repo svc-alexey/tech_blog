@@ -11,46 +11,27 @@
     flex: 1;
 }
 
-.logo {
-    flex: 1;
-    text-align: center;
-    font-size: 36px;
-    font-weight: bold;
-}
-
 .links {
     display: flex;
-    gap: 20px;
+    gap: 50px;
     flex: 1;
-    font-size: 20px;
     align-items: center;
+    justify-content: flex-end;
+}
+
+.icon:hover {
+    color: rgb(235, 210, 66);
+    transition: color 200ms linear;
 }
 
 @media screen and (max-width: 1280px) {
-    .logo{
-        font-size: 32px;
-    }
     .links {
         font-size: 18px;
-        gap: 15px;
+        gap: 30px;
     }
 }
 
 
-@media screen and (max-width: 1024px) {
-    .social{
-        display: none;
-    }
-    .logo{
-        text-align: left;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .logo{
-        font-size: 24px;
-    }
-}
 
 @media screen and (max-width: 640px) {
     .link {

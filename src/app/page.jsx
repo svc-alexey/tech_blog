@@ -14,7 +14,7 @@ const page = parseInt(searchParams.page) || 1;
       <CategoryList/>
       <div className={styles.content}>
         <CardList page={page}/>
-        <Menu/>
+        {/* <Menu/> */}
       </div>
     </div>  
   );

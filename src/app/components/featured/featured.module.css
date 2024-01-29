@@ -1,11 +1,38 @@
 .container {
-margin-top: 30px;
+    /* padding: 30px; */
+    /* width: 80%; */
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
 }
 
-.title {
+.fullWidth {
+    position: absolute;
+    height: 400px;
+    width: 100%;
+    transform: translateX(-50%);
+    position: relative;
+    left: 50%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.typed {
+    font-size: 36px;
+}
+
+/* .title {
     font-size: 96px;
     font-weight: 300;
+    height: 100px;
 }
+
 .title b {
     font-weight: 500;
 }
@@ -35,11 +62,12 @@ margin-top: 30px;
     flex-direction: column;
     gap: 20px;
 }
+
 .postTitle {
     font-size: 40px;
     font-weight: 300;
     color: var(--softTextColor);
-} 
+}
 
 .button {
     padding: 16px 20px;
@@ -49,13 +77,13 @@ margin-top: 30px;
 }
 
 @media screen and (max-width:1280px) {
-    .title{
+    .title {
         font-size: 72px;
     }
 }
 
 @media screen and (max-width:1024px) {
-    .title{
+    .title {
         font-size: 64px;
     }
 
@@ -65,13 +93,13 @@ margin-top: 30px;
 }
 
 @media screen and (max-width:768px) {
-    .title{
+    .title {
         font-size: 48px;
     }
 }
 
 @media screen and (max-width:640px) {
-    .title{
+    .title {
         font-size: 36px;
     }
-}
+} */

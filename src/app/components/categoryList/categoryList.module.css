@@ -22,27 +22,27 @@
     border-radius: 10px;
 }
 
-.category.style {
+.category.DevOps {
     background-color: #57c4ff31;
 }
 
-.category.fashion {
-    background-color: #da85c731;
+.category.1C {
+    background-color: #e2c50831;
 }
 
-.category.travel {
+.category.CSS {
     background-color: #7fb88133;
 }
 
-.category.culture {
+.category.Java {
     background-color: #ff795736;
 }
 
-.category.coding {
+.category.JavaScript {
     background-color: #ffb04f45;
 }
 
-.category.food {
+.category.React {
     background-color: #5e4fff31;
 }
 

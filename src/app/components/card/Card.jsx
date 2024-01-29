@@ -19,7 +19,7 @@ export const Card = ({ item }) => {
                     <h1>{item.title}</h1>
                 </Link>
                 <p className={styles.desc}>{item.desc.substring(0, 60)}</p>
-                <Link href={`/posts/${item.slug}`} className={styles.link}>Read more</Link>
+                <Link href={`/posts/${item.slug}`} className={styles.link}>Читать...</Link>
             </div>
         </div>
     )
