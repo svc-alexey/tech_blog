@@ -94,7 +94,7 @@ const Featured = props => {
 
   useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: ['Привет, это блог про технологии!', 'Давай развиватся вместе!'],
+      strings: ['Привет, это блог про технологии!', 'Давай развиваться вместе!'],
       typeSpeed: 50,
       backSpeed: 0,
       backDelay: 500,

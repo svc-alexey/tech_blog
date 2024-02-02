@@ -6,7 +6,7 @@ import Menu from '@/app/components/menu/Menu';
 
 //TODO: закэшировать на проде
 const getData = async (slug) => {
-  const res = await fetch(`http://localhost:3000/api/posts/${slug}`, {
+  const res = await fetch(`https://www.codesvc.ru/api/posts/${slug}`, {
     cache: "no-store",
   });
 

@@ -5,7 +5,7 @@ import { Card } from '../card/Card'
 
 //TODO: закэшировать на проде
 const getData = async (page, cat) => {
-  const res = await fetch(`http://localhost:3000/api/posts?page=${page}&cat=${cat || ""}`, {
+  const res = await fetch(`https://www.codesvc.ru/api/posts?page=${page}&cat=${cat || ""}`, {
     cache: "no-store",
   });
 
