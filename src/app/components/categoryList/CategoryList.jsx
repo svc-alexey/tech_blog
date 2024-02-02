@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 //TODO: закэшировать на проде
 const getData = async () => {
-  const res = await fetch("http://localhost:3000/api/categories", {
+  const res = await fetch("https://www.codesvc.ru/api/categories", {
     cache: "no-store",
   });
 
