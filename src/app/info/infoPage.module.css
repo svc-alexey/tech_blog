@@ -1,0 +1,13 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    margin: 20px;
+}
+
+.infoText {
+    line-height: 30px;
+}

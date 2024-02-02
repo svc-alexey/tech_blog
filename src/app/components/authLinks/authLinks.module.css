@@ -2,6 +2,13 @@
   cursor: pointer;
 }
 
+
+.icon:hover {
+  color: rgb(235, 210, 66);
+  transition: color 200ms linear;
+}
+
+
 .burger {
   width: 20px;
   height: 20px;
@@ -36,6 +43,7 @@
   .burger {
     display: flex;
   }
+
   .links {
     display: none;
   }
