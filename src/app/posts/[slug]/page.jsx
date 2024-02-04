@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './singlePage.module.css'
 import Image from 'next/image';
 import { Comments } from '@/app/components/comments/Comments';
-import Menu from '@/app/components/menu/Menu';
+
 
 //TODO: закэшировать на проде
 const getData = async (slug) => {
@@ -37,7 +37,7 @@ const SinglePage = async ({params}) => {
 
             <div className={styles.userTextContainer}>
               <span className={styles.userName}>{data?.user.name}</span>
-              <span className={styles.date}>01.03.2023</span>
+              <span className={styles.date}>{data?.createdAt.substring(0, 10)}</span>
             </div>
           </div>
         </div>
@@ -54,7 +54,7 @@ const SinglePage = async ({params}) => {
             <Comments postSlug={slug}/>
           </div>
         </div>
-        <Menu />
+        
       </div>
     </div>
   )

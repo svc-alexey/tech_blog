@@ -26,7 +26,6 @@ const Featured = props => {
   }, []);
 
   const particlesLoaded = (container) => {
-    console.log(container);
   };
 
   const options = useMemo(

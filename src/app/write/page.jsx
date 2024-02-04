@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import styles from "./writePage.module.css";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import dynamic from 'next/dynamic';
 import "react-quill/dist/quill.bubble.css";
 import { useRouter } from "next/navigation";
@@ -14,20 +14,20 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 import { app } from "@/utils/firebase";
-
-
 // import ReactQuill from "react-quill";
 
 const WritePage = () => {
   const { status } = useSession();
   const router = useRouter();
 
-  const ReactQuill = dynamic(() => import('react-quill'), {ssr: false}); 
+  const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
+  const quillRef = useRef();
+  const valueRef = useRef('');
 
   const [open, setOpen] = useState(false);
   const [file, setFile] = useState(null);
   const [media, setMedia] = useState("");
-  const [value, setValue] = useState("");
+  // const [value, setValue] = useState("");
   const [title, setTitle] = useState("");
   const [catSlug, setCatSlug] = useState("");
 
@@ -54,7 +54,7 @@ const WritePage = () => {
               break;
           }
         },
-        (error) => {},
+        (error) => { },
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
             setMedia(downloadURL);
@@ -70,9 +70,9 @@ const WritePage = () => {
     return <div className={styles.loading}>Loading...</div>;
   }
 
-  if (status === "unauthenticated") {
-    router.push("/");
-  }
+  // if (status === "unauthenticated") {
+  //   router.push("/");
+  // }
 
   const slugify = (str) =>
     str
@@ -90,7 +90,7 @@ const WritePage = () => {
         desc: value,
         img: media,
         slug: slugify(title),
-        catSlug: catSlug || "style", //If not selected, choose the general category
+        catSlug: catSlug || "1C", //If not selected, choose the general category
       }),
     });
 
@@ -98,6 +98,10 @@ const WritePage = () => {
       const data = await res.json();
       router.push(`/posts/${data.slug}`);
     }
+  };
+
+  const handleChange = (content, delta, source, editor) => {
+    valueRef.current = content;
   };
 
   return (
@@ -109,12 +113,12 @@ const WritePage = () => {
         onChange={(e) => setTitle(e.target.value)}
       />
       <select className={styles.select} onChange={(e) => setCatSlug(e.target.value)}>
-        <option value="style">style</option>
-        <option value="fashion">fashion</option>
-        <option value="food">food</option>
-        <option value="culture">culture</option>
-        <option value="travel">travel</option>
-        <option value="coding">coding</option>
+        <option value="1C">1C</option>
+        <option value="Java">Java</option>
+        <option value="JavaScript">JavaScript</option>
+        <option value="React">React</option>
+        <option value="DevOps">DevOps</option>
+        <option value="CSS">CSS</option>
       </select>
       <div className={styles.editor}>
         <button className={styles.button} onClick={() => setOpen(!open)}>
@@ -142,10 +146,11 @@ const WritePage = () => {
           </div>
         )}
         <ReactQuill
+          ref={quillRef}
           className={styles.textArea}
           theme="bubble"
-          value={value}
-          onChange={setValue}
+          value={valueRef.current}
+          onChange={handleChange}
           placeholder="Tell your story..."
         />
       </div>

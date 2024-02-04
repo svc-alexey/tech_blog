@@ -21,9 +21,8 @@ import { useRouter } from 'next/navigation'
   return (
     <div className={styles.container}>
         <div className={styles.wrapper}>
-            <div className={styles.socialButton} onClick={() => signIn("google")}>Sign im with Google</div>
-            <div className={styles.socialButton} onClick={() => signIn("github")}>Sign im with GitHub</div>
-            <div className={styles.socialButton}>Sign im with Facebook</div>
+            <div className={styles.socialButton} onClick={() => signIn("yandex")}>Войти с Yandex</div>
+            <div className={styles.socialButton} onClick={() => signIn("github")}>Войти с GitHub</div>
         </div>
     </div>
   )
